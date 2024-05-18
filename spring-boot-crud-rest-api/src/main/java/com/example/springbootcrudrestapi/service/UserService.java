@@ -1,17 +1,18 @@
 package com.example.springbootcrudrestapi.service;
 
-import com.example.springbootcrudrestapi.entity.User;
+import com.example.springbootcrudrestapi.dto.UserDto;
+import com.example.springbootcrudrestapi.exception.ResourceNotFoundException;
 
 import java.util.List;
 
 public interface UserService {
-     User createUser(User user);
+     UserDto createUser(UserDto user);
 
-     User getUserById(Long id);
+     UserDto getUserById(Long id) throws ResourceNotFoundException;
 
-     List<User> getAllUsers();
+     List<UserDto> getAllUsers();
 
-     User updateUser(Long id, User user);
+     UserDto updateUser(Long id, UserDto user) throws ResourceNotFoundException;
 
      void deleteUser(Long id);
 }
